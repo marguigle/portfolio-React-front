@@ -1,0 +1,11 @@
+.listaEstudios {
+    list-style-type: none;
+  }
+  .nada {
+    list-style-type: none;
+  }
+  .container-estudios {
+    justify-content: center;
+    text-align: start;
+  }
+  

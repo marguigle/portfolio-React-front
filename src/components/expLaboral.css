@@ -1,0 +1,18 @@
+.cont-exp {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  
+  .fotoExpLab {
+    max-width: 70px;
+    margin: 0 1rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgb(208, 211, 245);
+  }
+  .cont-exp p {
+    margin-left: 2rem;
+    vertical-align: baseline;
+  
+    color: rgb(10, 9, 9);
+  }
+  

@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "tecnologia": "HTML",
+        "porcentaje": "80"
+    },
+    {
+        "id": 2,
+        "tecnologia": "CSS",
+        "porcentaje": "70"
+    },
+    {
+        "id": 3,
+        "tecnologia": "JAVASCRIPT",
+        "porcentaje": "75"
+    },
+    {
+        "id": 4,
+        "tecnologia": "BOOTSTRAP",
+        "porcentaje": "70"
+    },
+    {
+        "id": 5,
+        "tecnologia": "REACT",
+        "porcentaje": "60"
+    },
+    {
+        "id": 6,
+        "tecnologia": "ANGULAR",
+        "porcentaje": "60"
+    },
+    {
+        "id": 7,
+        "tecnologia": "NODEJS",
+        "porcentaje": "50"
+    },
+    {
+        "id": 8,
+        "tecnologia": "EXPRESS",
+        "porcentaje": "60"
+    },
+    {
+        "id": 9,
+        "tecnologia": "JAVA",
+        "porcentaje": "40"
+    },
+    {
+        "id": 10,
+        "tecnologia": "SPRINGBOOT",
+        "porcentaje": "40"
+    },
+    {
+        "id": 11,
+        "tecnologia": "MYSQL",
+        "porcentaje": "40"
+    },
+    {
+        "id": 12,
+        "tecnologia": "MONGODB",
+        "porcentaje": "40"
+    }
+]

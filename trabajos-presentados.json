@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "titulo": "Salmonellosis en LES",
+        "lugar": "XII Jornadas Nacionales Interresidencias de Clinica medica, año 1990"
+    },
+    {
+        "id": 2,
+        "titulo": "sepsis por Shigella",
+        "lugar": "XVIII jornadas nacionales interresidencias de Clinia Medica, año 1990 "
+    },
+    {
+        "id": 3,
+        "titulo": "Sacroileitis Infecciosa por Stafilococo Aureus",
+        "lugar": "XXI congreso Argentino de Medicina Interna,-Asosiacion Medica Argentina, año 1993"
+    },
+    {
+        "id": 4,
+        "titulo": "Lepra y Lupus Eritematoso Sistemico - Mecanismos comunes de desregulacion autoinmune",
+        "lugar": "XXI congreso Argentino de Medicina Interna,-Asosiacion Medica Argentina, año 1993"
+    },
+    {
+        "id": 5,
+        "titulo": "Sindrome antifosfolipidico primario",
+        "lugar": "XXXII congreso Argentino de Reumatologia - Sociedad Argentina de Reumatologia, año 1993"
+    },
+    {
+        "id": 6,
+        "titulo": "Monografia 'Responsabilidad Profesional'",
+        "lugar": "Curso Superior de Medicina Legal, año 2000"
+    },
+    {
+        "id": 7,
+        "titulo": "Monografia 'Proyecto Genoma Humano'",
+        "lugar": "Curso Superior de Medicina Legal, año 2000"
+    },
+    {
+        "id": 8,
+        "titulo": "Monografia 'Enfermedad Respratoria Ocupacional'",
+        "lugar": "Curso Superior de Medicina Legal, año 2000"
+    },
+    {
+        "id": 9,
+        "titulo": "Evaluacion de la mortalidad, causas mas frecuentes e indicaciones de Hemodialisis en la insuficiencia Renal aguda",
+        "lugar": "XVIII Congreso Argentino de Terapia Intensiva, año 2008"
+    }
+]

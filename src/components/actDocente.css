@@ -1,0 +1,18 @@
+.listaEstudios {
+    list-style-type: none;
+  }
+  .nada {
+    list-style-type: none;
+  }
+  .container-estudios {
+    justify-content: center;
+    text-align: start;
+  }
+  li > p{
+   
+    color: rgb(3, 67, 123);
+   }
+   .accordion-body{
+     
+     background-color: rgba(212, 210, 210, 0.998);
+   }

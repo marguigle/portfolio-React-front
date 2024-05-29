@@ -1,0 +1,23 @@
+.deco {
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  .container-banner {
+    width: 100%;
+    height: auto;
+    color: #023743;
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/persona%2Fbanner-g8b8f7944b_1920.jpg?alt=media&token=8ebc73d0-ce32-4ed0-9770-c2e5e5cfe6b5");
+    border-radius: 8px;
+    background-size: cover; /* La imagen se ajustará para cubrir completamente el contenedor */
+    background-position: center;
+  }
+  .miFoto {
+    max-height: 150px;
+
+    border-radius: 50%;
+  }
+  .deco {
+    list-style-type: none;
+  }
+  
