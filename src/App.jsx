@@ -6,7 +6,7 @@ import Persona from './components/Persona.jsx'
 import Estudios from './components/Estudios.jsx'
 import ActDocente from './components/ActDocente.jsx'
 import Congresos from './components/Congresos.jsx'
-import './App.css'
+import Footer from './components/Footer.jsx'
 // import CargaImagenes from './components/CargaImagenes.jsx'
 function App() {
  
@@ -16,11 +16,13 @@ function App() {
           <div className='container'>
               <Navbar />
               {/* <CargaImagenes /> */}
+          
               <Persona />
               <Estudios />
-              <ActDocente />
               <Congresos />
+              <ActDocente />         
               <ExpLaboral />
+             < Footer />
           </div>
     </>
   )

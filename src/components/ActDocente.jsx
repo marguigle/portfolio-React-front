@@ -41,7 +41,7 @@ if (data.length === 0) {
 
   return (
     <div className="container shadow-md p-1 mb-1 bg-body rounded">
-    <div className="container-actDocente shadow-lg p-2 mb-4 bg-info rounded">
+    <div className="container-estudios shadow-lg p-2 mb-4 bg-info rounded">
       <h5>ACTIVIDAD DOCENTE</h5>
     </div>
   
