@@ -45,64 +45,39 @@ const Estudios = () => {
 
 
   return (
-    
-<div className="container shadow-md p-1 mb-1 bg-body rounded">
-  <div className=" shadow-lg p-2 mb-4 bg-info rounded aligne-center">
-    <h5>ESTUDIOS</h5>
-  </div>
 
-  <div className="container">
-    <div className="row" id="acordeones">
-      <div className="col-1"></div>
-
-      <div className="col-md-10">
-        <div className="accordion acordeon-flush" id="accordionExample">
-          <div className="accordion-item">
-            <h4 className="accordion-header" id="headingOne">
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="fal"
-                aria-controls="collapseOne"
-              >
-                ESTUDIOS CURSADOS
-              </button>
-            </h4>
-{
-  data.map(estudio =>{
-      return( 
-          <div key={estudio._id}
-                id="collapseOne"
-                className="accordion-collapse collapse show "
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
-                    <div className="accordion-body">
-                      <ul className='listaEstudios' >
-                        <li >
-                          <p className="shadow-sm p-1 mb-1 bg-body-tertiary rounded" >NIVEL: {estudio.tipo }</p>
-                          <p className="shadow-sm p-1 mb-1 bg-body-tertiary rounded">TITULO: {estudio.titulo }</p>
-                          <p className="shadow-sm p-1 mb-1 bg-body-tertiary rounded">LUGAR: {estudio.lugar }</p>
-                          <p className="shadow-sm p-1 mb-1 bg-body-tertiary rounded">FECHA: {estudio.fecha }</p>
-                        </li>
-                      </ul>
-                    </div>
-              </div>)
-  })
+    <div className="accordion accordion-flush" id="accordionFlushExample">
+             <div className="accordion-item shadow-sm p-1 mb-1 bg-body-tertiary rounded">
+                  <h2 className="accordion-header">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                     Estudios
+                    </button>
+                  </h2>
+                                {
+                          data.map( estudio=>{
+                            return (
+                                   
+                                <div id="flush-collapseOne" 
+                                className="accordion-collapse collapse" 
+                                data-bs-parent="#accordionFlushExample"
+                                key={estudio._id}>
+                                  <div className="accordion-body">
+                                      <ul  className='listaEstudios' >
+                                        <li className="shadow-sm p-1 mb-1  rounded">{estudio.tipo }</li>
+                                        <li>{estudio.titulo}</li>
+                                        <li>{estudio.lugar}</li>
+                                        <li>{estudio.fecha}</li>
+                                      </ul>
+                                    </div>
+                                </div>              
+                            
+                            )
+                          })
+                      
 }
-
-
-          </div>
-        </div>
-      </div>
-      <div className="col-1"></div>
-    </div>
-  </div>
-
+         </div>
 </div>
-  )
+ )
 }
 
 export default Estudios

@@ -37,59 +37,39 @@ const Congresos = () => {
   }
 
   return (
-    <div className="container shadow-md p-1 mb-1 bg-body rounded">
-      <div className="container-estudios shadow-lg p-2 mb-4 bg-info rounded">
-        <h5>CONGRESOS</h5>
-      </div>
-
-      <div className="container">
-        <div className="row" id="acordeones">
-          <div className="col-1"></div>
-
-          <div className="col-md-10">
-            <div className="accordion acordeon-flush" id="accordionExample">
-              <div className="accordion-item">
-                <h4 className="accordion-header" id="headingOne">
-                  <button
-                    className="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="false"
-                    aria-controls="collapseOne"
-                  >
-                    CONGRESOS
-                  </button>
-                </h4>
-                <div
-                  id="collapseOne"
-                  className="accordion-collapse collapse"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div className="accordion-body nada">
-                    <ul className="listaEstudios">
-                      {data.map((congreso) => (
-                        <li key={congreso._id}>
-                          <p className="shadow-sm p-1 mb-1 bg-body-tertiary rounded">
-                            {congreso.lugar} <br />
-                            {congreso.titulo}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+    <div className="accordion accordion-flush" id="accordionFlushExample">
+    <div className="accordion-item shadow-sm p-1 mb-1 bg-body-tertiary rounded">
+      <h2 className="accordion-header">
+        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Congresos
+        </button>
+      </h2>
+{
+      data.map( congreso=>{
+        return (
+          <>            
+             <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+              <div className="accordion-body">
+                <ul key={congreso._id} className='listaEstudios' >
+                  <li className="shadow-sm p-1 mb-1  rounded">{congreso.lugar}</li>
+                  <li >{congreso.titulo}</li>
+                </ul>
+                
                 </div>
-              </div>
-            </div>
-            <div className="col-2"></div>
-          </div>
-          <div className="col-1"></div>
-        </div>
-      </div>
+              
+             </div>              
+          </>
+        )
+      })
+  
+}
     </div>
+</div>
+ 
+
+
+ 
   );
 };
 
 export default Congresos;
-
