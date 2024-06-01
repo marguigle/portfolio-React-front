@@ -1,6 +1,23 @@
 
-
+import { Link } from "react-router-dom";
  const Navbar = () => {
+  const linkMenu = [
+    {
+      name: "home",
+      to: "/",
+    },
+    {
+      name: "Currículum Médico",
+      to: "/medic",
+    },
+
+    {
+      name: "Dearrollador web Full Stack",
+      to: "/developer",
+    },
+
+  ];
+
   return (
     <nav className=" container navbar navbar-expand-lg bg-info shadow p-3 mb-1  rounded">
           <div className="container-fluid">
@@ -11,16 +28,14 @@
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className ="nav-link active" aria-current="page" href="#">Home</a>
+                  <Link to={linkMenu[0].to} className ="nav-link " aria-current="page" >Home</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Features</a>
+                  <Link to={linkMenu[1].to} className="nav-link " >Currículum Médico</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">Pricing</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link disabled">Disabled</a>
+                  <Link to={linkMenu[2].to} className="nav-link" > Dearrollador web Full Stack
+                </Link>
                 </li>
               </ul>
             </div>
