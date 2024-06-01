@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchData } from "../services/apiService";
+import { fetchData } from "../../services/apiService";
 import './persona.css'
 const Persona = () => {
   const [data, setData] = useState([]);

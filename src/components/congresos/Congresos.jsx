@@ -1,7 +1,8 @@
 
 import './congresos.css';
 import { useEffect, useState } from "react";
-import { fetchData } from "../services/apiService";
+import { fetchData } from "../../../src/services/apiService";
+import Cargando from '../Cargando';
 
 const Congresos = () => {
   const [data, setData] = useState([]);
@@ -25,7 +26,7 @@ const Congresos = () => {
   }, []);
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <Cargando />;
   }
 
   if (error) {
@@ -40,7 +41,7 @@ const Congresos = () => {
     <div className="accordion accordion-flush" id="accordionFlushExample">
     <div className="accordion-item shadow-sm p-1 mb-1 bg-body-tertiary rounded">
       <h2 className="accordion-header">
-        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        <button className="accordion-button collapsed btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
           Congresos
         </button>
       </h2>

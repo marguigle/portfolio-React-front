@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
-import { fetchData } from "../services/apiService";
+import { fetchData } from "../../services/apiService";
+import Cargando from "../Cargando";
 import './expLaboral.css'
 
 
@@ -30,7 +31,7 @@ const ExpLaboral = () => {
   }, []);
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return <Cargando />;
   }
 
   if (error) {

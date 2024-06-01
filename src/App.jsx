@@ -1,31 +1,37 @@
 
 import './App.css'
-import ExpLaboral from './components/ExpLaboral.jsx'
-import  Navbar  from './components/Navbar.jsx'
-import Persona from './components/Persona.jsx'
-import Estudios from './components/Estudios.jsx'
-import ActDocente from './components/ActDocente.jsx'
-import Congresos from './components/Congresos.jsx'
-import Footer from './components/Footer.jsx'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import MainLayout from './layouts/MainLayout.jsx';
+import Home from './pages/Home.jsx';
+import Medic from './pages/Medic.jsx';
+import WebDeveloper from './pages/WebDeveloper.jsx'
 // import CargaImagenes from './components/CargaImagenes.jsx'
+
+const router = createBrowserRouter([{
+  path: "/",
+  element: <MainLayout />,
+  children: [
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/medic",
+      element: <Medic />,
+    },
+    {
+      path: "/developer",
+      element: <WebDeveloper />,
+    }
+    ]
+   }] )
+
+
+
 function App() {
  
 
-  return (
-    <>
-          <div className='container'>
-              <Navbar />
-              {/* <CargaImagenes /> */}
-          
-              <Persona />
-              <Estudios />
-              <Congresos />
-              <ActDocente />         
-              <ExpLaboral />
-             < Footer />
-          </div>
-    </>
-  )
+  return ( <RouterProvider router={router}/>)
 }
 
 export default App
