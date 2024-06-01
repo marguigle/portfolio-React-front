@@ -40,10 +40,10 @@ if (data.length === 0) {
 }
 
   return (
-          <div className="accordion accordion-flush" id="accordionFlushExample">
-          <div className="accordion-item shadow-sm p-1 mb-1 bg-body-tertiary rounded">
+          <div className=" container accordion accordion-flush" id="accordionFlushExample">
+          <div className="accordion-item shadow-sm p-1 mb-1 bg-body-terciary rounded">
             <h2 className="accordion-header ">
-              <button className="accordion-button collapsed btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              <button className="accordion-button collapsed btn btn-primary rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                 Actividad Docente
               </button>
             </h2>

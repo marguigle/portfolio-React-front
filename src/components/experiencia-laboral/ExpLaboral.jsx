@@ -48,7 +48,7 @@ const ExpLaboral = () => {
 
   return (
     <>
-      <div className="container shadow-lg p-1 mb-1 bg-body rounded">
+      <div className="container shadow-lg p-1 mb-1 mr-2 ml-2 bg-body rounded">
         
           <div className="shadow-lg p-2 mb-4 bg-info rounded">
             <h5>EXPERIENCIA LABORAL</h5>

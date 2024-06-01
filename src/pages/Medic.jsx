@@ -16,4 +16,4 @@ const Medic = () => {
   );
 }
 
-export default Medic;
+export default Medic

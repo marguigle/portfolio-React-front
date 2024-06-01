@@ -1,12 +1,14 @@
-
+import '../../../tailwind-page.css'
 
 const Footer = () => {
   return (
-    <div className=" bg-info shadow p-3 mb-1 bg-body-tertiary rounded">
-        <div className="container-fluid">
-            <h1>Footer</h1>
-        </div>
-    </div>
+    
+      <div className=" container mx-auto bg-cyan-500 min-w-80 min-h-20 rounded ">
+          <div className="">
+              <h1>Footer</h1>
+          </div>
+      </div>
+
   )
 }
 
