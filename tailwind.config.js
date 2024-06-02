@@ -2,13 +2,18 @@
 export default {
   content: [
     "./index.html",
-   
+    "./src/**/*.{html,js}",
     "./src/pages/Home.jsx",
-    "./src/components/footer/Footer.jsx"
+    "./src/pages/webDeveloper.jsx.jsx",
+    "./src/components/footer/Footer.jsx",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements/js/**/*.js",
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [require("tw-elements/plugin.cjs")],
 }
 

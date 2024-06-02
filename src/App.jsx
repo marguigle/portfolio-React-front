@@ -5,6 +5,8 @@ import MainLayout from './layouts/MainLayout.jsx';
 import Home from './pages/Home.jsx';
 import Medic from './pages/Medic.jsx';
 import WebDeveloper from './pages/WebDeveloper.jsx'
+import { useEffect } from "react";
+import { Tooltip, initTWE } from "tw-elements";
 // import CargaImagenes from './components/CargaImagenes.jsx'
 
 const router = createBrowserRouter([{
@@ -26,10 +28,12 @@ const router = createBrowserRouter([{
     ]
    }] )
 
+   function App() {
+   useEffect(() => {
+    initTWE({ Tooltip });
+  }, []);
 
 
-function App() {
- 
 
   return ( <RouterProvider router={router}/>)
 }

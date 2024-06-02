@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
- const Navbar = () => {
+const Navbar = () => {
   const linkMenu = [
     {
       name: "home",
@@ -15,32 +14,55 @@ import { Link } from "react-router-dom";
       name: "Dearrollador web Full Stack",
       to: "/developer",
     },
-
   ];
 
   return (
-    <nav className=" container navbar navbar-expand-lg bg-info shadow p-3 mb-1  rounded">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="#">Navbar</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link to={linkMenu[0].to} className ="nav-link " aria-current="page" >Home</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={linkMenu[1].to} className="nav-link " >Currículum Médico</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={linkMenu[2].to} className="nav-link" > Dearrollador web Full Stack
-                </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <nav
+      className="container relative flex w-full flex-wrap  items-center justify-between 
+     bg-cyan-500 py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4 rounded"
+    >
+      <div className="relative flex items-center">
+        <ul>
+          <button
+            type="button"
+            className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-slate-800 text-lg shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-200 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          >
+            <li className="">
+              <Link
+                to={linkMenu[0].to}
+                className="nav-link "
+                aria-current="page"
+              >
+                Home
+              </Link>
+            </li>
+          </button>
+          <button
+            type="button"
+            className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-slate-800 text-lg
+            shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-200 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          >
+            <li className="nav-item">
+              <Link to={linkMenu[1].to} className="nav-link ">
+                Currículum Médico
+              </Link>
+            </li>
+          </button>
+          <button
+            type="button"
+            className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-slate-800 text-lg
+            shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-200 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-cian-800 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+          >
+            <li className="nav-item">
+              <Link to={linkMenu[2].to} className="nav-link">
+                {" "}
+                Dearrollador web Full Stack
+              </Link>
+            </li>
+          </button>
+        </ul>
+      </div>
     </nav>
-  )
-}
-export default Navbar
+  );
+};
+export default Navbar;
