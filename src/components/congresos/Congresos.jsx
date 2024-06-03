@@ -167,13 +167,16 @@ const Congresos = () => {
   return (
     <div className="container">
       <div className="shadow-lg-300 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
-        <h5>CONGRESOS</h5>
+        <h5 className="font-bold">CONGRESOS</h5>
       </div>
       <div className="list-group mb-2">
         {data.map((congreso) => (
-          <div className="list-group-item mb-1" key={congreso._id}>
-            <h5 className="mb-1">{congreso.titulo}</h5>
-            <p className="mb-1">{congreso.lugar}</p>
+          <div
+            className="list-group-item mb-3 bg-white shadow-4 rounded-lg"
+            key={congreso._id}
+          >
+            <h5 className="mb-1">{congreso.lugar}</h5>
+            <p className="mb-1">{congreso.titulo}</p>
           </div>
         ))}
       </div>

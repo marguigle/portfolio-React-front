@@ -110,7 +110,7 @@ const HardSkills = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h4 className="text-center mb-4">Hard Skills</h4>
+      <h4 className="text-center mb-4 text-2xl font-bold">Hard Skills</h4>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.map((hardSkill) => {
           return (

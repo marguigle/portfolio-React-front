@@ -105,7 +105,7 @@ const ActDocente = () => {
   return (
     <div className="container">
       <div className="shadow-lg-300 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
-        <h5>ACTIVIDAD DOCENTE</h5>
+        <h5 className="font-bold">ACTIVIDAD DOCENTE</h5>
       </div>
       <div className="row">
         {data.map((actDocente) => (

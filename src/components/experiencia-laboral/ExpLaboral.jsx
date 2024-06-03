@@ -42,7 +42,9 @@ const ExpLaboral = () => {
     <>
       <div className="container shadow-lg p-1 mb-1 mr-2 ml-2 bg-body rounded">
         <div className="shadow-lg p-2 mb-4 bg-info rounded">
-          <h5>EXPERIENCIA LABORAL</h5>
+          <h5 className="font-bold text-2xl text-center">
+            EXPERIENCIA LABORAL
+          </h5>
         </div>
         <div>
           {data.map((experiencia) => (
@@ -50,7 +52,7 @@ const ExpLaboral = () => {
               <img
                 src={experiencia.logos}
                 alt="foto de la experiencia laboral"
-                className="fotoExpLab"
+                className="fotoExpLab transition duration-300 ease-in-out hover:scale-110"
               />
               <p>
                 {experiencia.cargo} {experiencia.lugar} {experiencia.fecha}
