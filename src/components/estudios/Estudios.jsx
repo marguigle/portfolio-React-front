@@ -1,12 +1,9 @@
-
-import './estudios.css'
 import { useEffect, useState } from "react";
 import { fetchData } from "../../../src/services/apiService";
-import Cargando from '../Cargando';
-
+import Cargando from "../Cargando";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Estudios = () => {
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,9 +11,8 @@ const Estudios = () => {
   useEffect(() => {
     const fetchDataFromApi = async () => {
       try {
-        const response = await fetchData('http://localhost:3000/api/estudios');
-        console.log(response)
-        setData(response); // Accede al array dentro de response
+        const response = await fetchData("http://localhost:3000/api/estudios");
+        setData(response);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -25,7 +21,6 @@ const Estudios = () => {
     };
 
     fetchDataFromApi();
-
   }, []);
 
   if (loading) {
@@ -40,44 +35,27 @@ const Estudios = () => {
     return <div>No hay datos disponibles</div>;
   }
 
-
-
-
-
   return (
+    <div className="container">
+      <div className="shadow-lg-300 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
+        <h5>ESTUDIOS</h5>
+      </div>
+      <div className="row">
+        {data.map((estudio) => (
+          <div className="col-md-4 mb-4" key={estudio._id}>
+            <div className="card bg-amber-200 shadow-md max-w-xs transition duration-300 ease-in-out hover:scale-110">
+              <div className="card-body">
+                <h5 className="card-title text-amber-900">{estudio.titulo}</h5>
+                <p className="card-text">Tipo: {estudio.tipo}</p>
+                <p className="card-text">Lugar: {estudio.lugar}</p>
+                <p className="card-text">Fecha: {estudio.fecha}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
-    <div className=" container accordion accordion-flush" id="accordionFlushExample">
-             <div className="accordion-item shadow-sm p-1 mb-1 bg-body-tertiary rounded">
-                  <h2 className="accordion-header">
-                    <button className="accordion-button collapsed  btn btn-primary rounded" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                     Estudios
-                    </button>
-                  </h2>
-                                {
-                          data.map( estudio=>{
-                            return (
-                                   
-                                <div id="flush-collapseOne" 
-                                className="accordion-collapse collapse" 
-                                data-bs-parent="#accordionFlushExample"
-                                key={estudio._id}>
-                                  <div className="accordion-body">
-                                      <ul  className='listaEstudios' >
-                                        <li className="shadow-sm p-1 mb-1  rounded">{estudio.tipo }</li>
-                                        <li>{estudio.titulo}</li>
-                                        <li>{estudio.lugar}</li>
-                                        <li>{estudio.fecha}</li>
-                                      </ul>
-                                    </div>
-                                </div>              
-                            
-                            )
-                          })
-                      
-}
-         </div>
-</div>
- )
-}
-
-export default Estudios
+export default Estudios;

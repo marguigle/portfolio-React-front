@@ -1,7 +1,7 @@
-body{
-    background-color: rgb(212, 210, 210);
+body {
+  background-color: rgb(212, 210, 210);
+  overflow-x: hidden;
 }
 * {
-    font-family: cursive;
-  }
-  
+  font-family: cursive;
+}
