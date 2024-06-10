@@ -82,10 +82,11 @@ const HardSkills = () => {
   useEffect(() => {
     const fetchDataFromApi = async () => {
       try {
-        const response = await fetchData(
+        const respuesta = await fetchData(
           "http://localhost:3000/api/hardskills"
         );
-        setData(response);
+        console.log("hardskill " + respuesta);
+        setData(respuesta.response);
       } catch (error) {
         setError(error.message);
       } finally {

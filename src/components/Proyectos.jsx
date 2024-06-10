@@ -1,78 +1,222 @@
+// import { useState, useCallback, useEffect } from "react";
+// import { fetchData } from "../services/apiService.js";
+// import Cargando from "./Cargando";
+
+// const Proyectos = () => {
+//   const [indice, setIndice] = useState(0);
+//   const [data, setData] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     const fetchDataFromApi = async () => {
+//       try {
+//         const respuesta = await fetchData(
+//           "http://localhost:3000/api/proyectos"
+//         );
+//         console.log("primer conslog", respuesta);
+//         setData(respuesta.response); // Asegúrate de que la respuesta sea la estructura correcta
+//         console.log("segundo conslog", respuesta.response);
+//       } catch (error) {
+//         setError(error.message);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchDataFromApi();
+//   }, []);
+
+//   console.log("tercer conslog", data);
+
+//   const prev = useCallback((imgsLength) => {
+//     setIndice((prevIndice) => (prevIndice - 1 + imgsLength) % imgsLength);
+//   }, []);
+
+//   const next = useCallback((imgsLength) => {
+//     setIndice((prevIndice) => (prevIndice + 1) % imgsLength);
+//   }, []);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       if (data.length > 0) {
+//         // Modificado
+//         next(data[0].imgs.length); // Usa el primer proyecto para determinar la longitud de imgs
+//       }
+//     }, 1000);
+
+//     return () => {
+//       clearTimeout(timer);
+//     };
+//   }, [next, data]);
+
+//   if (loading) {
+//     return <Cargando />;
+//   }
+
+//   if (error) {
+//     return <div>Error: {error}</div>;
+//   }
+
+//   return (
+//     <div className="flex flex-col items-center">
+//       <div className="m-6 text-2xl font-bold">
+//         <h5>Proyectos</h5>
+//       </div>
+
+//       {data.map((proyecto, projectIndex) => (
+//         <div key={projectIndex}>
+//           <p>{proyecto.titulo}</p>
+//           <div className="flex ">
+//             <button
+//               onClick={() => prev(proyecto.imgs?.length || 0)}
+//               className="mr-2"
+//             >
+//               <img
+//                 src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-gal%C3%B3n-izquierdo-24.png?alt=media&token=a878a7c8-b18e-4409-bfc8-8107303768b3"
+//                 alt="Previous"
+//               />
+//             </button>
+
+//             <div className="max-w-xl flex justify-center mx-auto mb-5">
+//               <img
+//                 src={proyecto.imgs ? proyecto.imgs[indice] : ""}
+//                 alt="Project Screenshot"
+//                 className="border-2 shadow-md"
+//               />{" "}
+//             </div>
+
+//             <button
+//               onClick={() => next(proyecto.imgs?.length || 0)}
+//               className="ml-2"
+//             >
+//               <img
+//                 src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-chevron-right-24.png?alt=media&token=12d12a6a-0bf5-4ae6-98b7-8b44827e43fa"
+//                 alt="Next"
+//               />
+//             </button>
+//           </div>
+
+//           <p className="justify-center w-auto mb-3">{proyecto.tecnologias}</p>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default Proyectos;
 import { useState, useCallback, useEffect } from "react";
+import { fetchData } from "../services/apiService.js";
+import Cargando from "./Cargando";
 
 const Proyectos = () => {
-  const [indice, setIndice] = useState(0);
-
-  const imagenesUrlAe = [
-    {
-      id: 1,
-      img: "https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2FCaptura%20de%20pantalla%202024-04-29%20155848.png?alt=media&token=6049d1f3-73cb-4665-81ed-00c8d173c7dc",
-    },
-    {
-      id: 2,
-      img: "https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2FCaptura%20de%20pantalla%202024-04-29%20155946.png?alt=media&token=94b36751-24e3-424d-bde7-8150bd9b612a",
-    },
-    {
-      id: 3,
-      img: "https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2FCaptura%20de%20pantalla%202024-04-29%20160012.png?alt=media&token=638da3c6-8d64-41bc-a36e-c688cd56af80",
-    },
-    {
-      id: 4,
-      img: "https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2FCaptura%20de%20pantalla%202024-04-29%20160032.png?alt=media&token=700adfca-d8e9-465e-86fe-ba3a33030501",
-    },
-    {
-      id: 5,
-      img: "https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2FCaptura%20de%20pantalla%202024-04-29%20160056.png?alt=media&token=f1606dfa-a723-4aeb-b781-625ebdb5a1e2",
-    },
-  ];
-
-  const prev = () => {
-    setIndice((indice - 1 + imagenesUrlAe.length) % imagenesUrlAe.length);
-  };
-
-  const next = useCallback(() => {
-    setIndice((indice + 1) % imagenesUrlAe.length);
-  }, [indice]);
+  const [indices, setIndices] = useState([]);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      next();
-    }, 3000);
+    const fetchDataFromApi = async () => {
+      try {
+        const respuesta = await fetchData(
+          "http://localhost:3000/api/proyectos"
+        );
+        console.log("primer conslog", respuesta);
+        setData(respuesta.response);
+        setIndices(respuesta.response.map(() => 0)); // Inicializar los índices para cada proyecto
+        console.log("segundo conslog", respuesta.response);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDataFromApi();
+  }, []);
+
+  console.log("tercer conslog", data);
+
+  const prev = useCallback((projectIndex, imgsLength) => {
+    setIndices((prevIndices) =>
+      prevIndices.map((indice, index) =>
+        index === projectIndex ? (indice - 1 + imgsLength) % imgsLength : indice
+      )
+    );
+  }, []);
+
+  const next = useCallback((projectIndex, imgsLength) => {
+    setIndices((prevIndices) =>
+      prevIndices.map((indice, index) =>
+        index === projectIndex ? (indice + 1) % imgsLength : indice
+      )
+    );
+  }, []);
+
+  useEffect(() => {
+    const timers = data.map((proyecto, index) =>
+      setInterval(() => {
+        next(index, proyecto.imgs.length);
+      }, 3000)
+    );
 
     return () => {
-      clearTimeout(timer);
+      timers.forEach(clearInterval);
     };
-  }, [next]);
+  }, [next, data]);
+
+  if (loading) {
+    return <Cargando />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center shadow-lg p-4">
       <div className="m-6 text-2xl font-bold">
-        <h5>proyectos</h5>
+        <h5>Proyectos</h5>
       </div>
-      <p>Provecto con vanilla html css js llamada a Api Rest</p>
-      <div className="flex ">
-        <button onClick={prev} className="mr-2">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-gal%C3%B3n-izquierdo-24.png?alt=media&token=a878a7c8-b18e-4409-bfc8-8107303768b3"
-            alt=""
-          />
-        </button>
 
-        <div className="max-w-xl flex justify-center mx-auto mb-5">
-          <img
-            src={imagenesUrlAe[indice].img}
-            alt="Project Screenshot"
-            className="border-2 shadow-md"
-          />{" "}
+      {data.map((proyecto, projectIndex) => (
+        <div key={projectIndex}>
+          <p className="text-center">{proyecto.titulo}</p>
+          <div className="flex ">
+            <button
+              onClick={() => prev(projectIndex, proyecto.imgs?.length || 0)}
+              className="mr-2"
+            >
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-gal%C3%B3n-izquierdo-24.png?alt=media&token=a878a7c8-b18e-4409-bfc8-8107303768b3"
+                alt="Previous"
+              />
+            </button>
+
+            <div className="max-w-xl flex justify-center mx-auto mb-5">
+              <img
+                src={proyecto.imgs ? proyecto.imgs[indices[projectIndex]] : ""}
+                alt="Project Screenshot"
+                className="border-2 shadow-md"
+              />{" "}
+            </div>
+
+            <button
+              onClick={() => next(projectIndex, proyecto.imgs?.length || 0)}
+              className="ml-2"
+            >
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-chevron-right-24.png?alt=media&token=12d12a6a-0bf5-4ae6-98b7-8b44827e43fa"
+                alt="Next"
+              />
+            </button>
+          </div>
+
+          <p className="justify-center text-center w-auto mb-3">
+            {proyecto.tecnologias}
+          </p>
         </div>
-
-        <button onClick={next} className="ml-2">
-          <img
-            src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-chevron-right-24.png?alt=media&token=12d12a6a-0bf5-4ae6-98b7-8b44827e43fa"
-            alt=""
-          />
-        </button>
-      </div>
+      ))}
     </div>
   );
 };
