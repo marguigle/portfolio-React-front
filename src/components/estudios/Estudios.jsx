@@ -12,7 +12,7 @@ const Estudios = () => {
     const fetchDataFromApi = async () => {
       try {
         const response = await fetchData("http://localhost:3000/api/estudios");
-        setData(response);
+        setData(response.response);
       } catch (error) {
         setError(error.message);
       } finally {

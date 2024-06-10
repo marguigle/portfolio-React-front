@@ -141,7 +141,7 @@ const Congresos = () => {
     const fetchDataFromApi = async () => {
       try {
         const response = await fetchData("http://localhost:3000/api/congresos");
-        setData(response);
+        setData(response.response);
       } catch (error) {
         setError(error.message);
       } finally {

@@ -10,7 +10,7 @@ const Persona = () => {
     const fetchDataFromApi = async () => {
       try {
         const persona = await fetchData("http://localhost:3000/api/persona");
-        setData(persona); // Accede al array dentro de response
+        setData(persona.response); // Accede al array dentro de response
       } catch (error) {
         setError(error.message);
       } finally {

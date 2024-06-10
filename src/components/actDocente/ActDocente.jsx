@@ -1,70 +1,5 @@
-// import { useEffect, useState } from "react";
-// import { fetchData } from "../../../src/services/apiService";
-// import Cargando from "../Cargando";
-
-// const ActDocente = () => {
-//   const [data, setData] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-
-//   useEffect(() => {
-//     const fetchDataFromApi = async () => {
-//       try {
-//         const response = await fetchData(
-//           "http://localhost:3000/api/actdocente"
-//         );
-
-//         setData(response); // Accede al array dentro de response
-//       } catch (error) {
-//         setError(error.message);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchDataFromApi();
-//   }, []);
-
-//   if (loading) {
-//     return <Cargando />;
-//   }
-
-//   if (error) {
-//     return <div>Error: {error}</div>;
-//   }
-
-//   if (data.length === 0) {
-//     return <div>No hay datos disponibles</div>;
-//   }
-
-//   return (
-//     <div>
-//       <div>
-//         <h2>
-//           <button>Actividad Docente</button>
-//         </h2>
-//         {data.map((actDocente) => {
-//           return (
-//             <div key={actDocente._id}>
-//               <div className="accordion-body">
-//                 <ul className="listaEstudios">
-//                   <li className="shadow-sm p-1 mb-1  rounded ">
-//                     {actDocente.titulo}
-//                   </li>
-//                   <li>{actDocente.lugar}</li>
-//                 </ul>
-//               </div>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ActDocente;
 import { useEffect, useState } from "react";
-import { fetchData } from "../../../src/services/apiService";
+import { fetchData } from "../../services/apiService";
 import Cargando from "../Cargando";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -79,7 +14,7 @@ const ActDocente = () => {
         const response = await fetchData(
           "http://localhost:3000/api/actdocente"
         );
-        setData(response);
+        setData(response.response);
       } catch (error) {
         setError(error.message);
       } finally {

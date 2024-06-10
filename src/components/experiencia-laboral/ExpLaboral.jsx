@@ -15,7 +15,7 @@ const ExpLaboral = () => {
           "http://localhost:3000/api/explaboral"
         );
         console.log(response);
-        setData(response); // Accede al array dentro de response
+        setData(response.response); // Accede al array dentro de response
       } catch (error) {
         setError(error.message);
       } finally {
