@@ -109,8 +109,10 @@ const HardSkills = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h4 className="text-center mb-4 text-2xl font-bold">Hard Skills</h4>
+    <div className="container mx-auto p-4 bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/pexels-steve-1537334.jpg?alt=media&token=31065b30-1439-4f4c-b5ff-f3b1411d40c3')] bg-cover bg-center  from-stone-600 ">
+      <h4 className="text-center mb-4 text-2xl font-bold text-white">
+        Hard Skills
+      </h4>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {data.map((hardSkill) => {
           return (

@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/trees-450854_1920.jpg?alt=media&token=ecac8fcd-2ddd-4186-97e3-f6fef009874a')] bg-cover bg-center h-screen  from-stone-600 ">
+    <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/pexels-steve-1537334.jpg?alt=media&token=31065b30-1439-4f4c-b5ff-f3b1411d40c3')] bg-cover bg-center h-screen  from-stone-600 ">
       <h1 className="text-4xl text-center text-slate-600 pt-16  font-bold">
         Bienvenido a mi Portfolio
       </h1>
