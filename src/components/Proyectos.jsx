@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect } from "react";
 import { fetchData } from "../services/apiService.js";
 import Cargando from "./Cargando";
+import.meta.env.VITE_URL_BASE;
+const url = import.meta.env.VITE_URL_BASE;
 
 const Proyectos = () => {
   const [indices, setIndices] = useState([]);
@@ -11,9 +13,7 @@ const Proyectos = () => {
   useEffect(() => {
     const fetchDataFromApi = async () => {
       try {
-        const respuesta = await fetchData(
-          "http://localhost:3000/api/proyectos"
-        );
+        const respuesta = await fetchData(url + "/proyectos");
         console.log("primer conslog", respuesta);
         setData(respuesta.response);
         setIndices(respuesta.response.map(() => 0)); // Inicializar los índices para cada proyecto

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../../services/apiService";
 import Cargando from "../Cargando";
 import "./expLaboral.css";
+import.meta.env.VITE_URL_BASE;
+const url = import.meta.env.VITE_URL_BASE;
 
 const ExpLaboral = () => {
   const [data, setData] = useState([]);
@@ -11,9 +13,7 @@ const ExpLaboral = () => {
   useEffect(() => {
     const fetchDataFromApi = async () => {
       try {
-        const response = await fetchData(
-          "http://localhost:3000/api/explaboral"
-        );
+        const response = await fetchData(url + "/explaboral");
         console.log(response);
         setData(response.response); // Accede al array dentro de response
       } catch (error) {

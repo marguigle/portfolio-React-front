@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "../../services/apiService";
 import "./persona.css";
+import.meta.env.VITE_URL_BASE;
+const url = import.meta.env.VITE_URL_BASE;
+
+console.log(url);
 const Persona = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +13,7 @@ const Persona = () => {
   useEffect(() => {
     const fetchDataFromApi = async () => {
       try {
-        const persona = await fetchData("http://localhost:3000/api/persona");
+        const persona = await fetchData(url + "/persona");
         setData(persona.response); // Accede al array dentro de response
       } catch (error) {
         setError(error.message);

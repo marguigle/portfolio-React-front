@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../../services/apiService";
 import Cargando from "../Cargando";
 import "bootstrap/dist/css/bootstrap.min.css";
+import.meta.env.VITE_URL_BASE;
+const url = import.meta.env.VITE_URL_BASE;
 
 const ActDocente = () => {
   const [data, setData] = useState([]);
@@ -11,9 +13,7 @@ const ActDocente = () => {
   useEffect(() => {
     const fetchDataFromApi = async () => {
       try {
-        const response = await fetchData(
-          "http://localhost:3000/api/actdocente"
-        );
+        const response = await fetchData(url + "/actdocente");
         setData(response.response);
       } catch (error) {
         setError(error.message);
