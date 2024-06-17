@@ -26,7 +26,7 @@ const Navbar = () => {
           <button
             type="button"
             className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5 m-2
-             font-medium uppercase leading-normal text-white text-lg shadow-primary-3 
+             font-medium uppercase leading-normal text-white text-sm shadow-primary-3 
              transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 
              focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 
              motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
@@ -43,7 +43,7 @@ const Navbar = () => {
           </button>
           <button
             type="button"
-            className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-white text-lg
+            className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-white text-sm
             shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           >
             <li className="transition duration-300 ease-in-out hover:scale-110">
@@ -54,7 +54,7 @@ const Navbar = () => {
           </button>
           <button
             type="button"
-            className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-white text-lg
+            className="inline-block rounded bg-cian-500 y px-6 pb-2 pt-2.5  font-medium uppercase leading-normal text-white text-sm
             shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-cian-800 active:shadow-primary-2 motion-reduce:transition-none dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
           >
             <li className="transition duration-300 ease-in-out hover:scale-110">
