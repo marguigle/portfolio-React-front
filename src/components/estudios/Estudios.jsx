@@ -39,11 +39,11 @@ const Estudios = () => {
   }
 
   return (
-    <div className="container">
-      <div className="shadow-lg-300 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
-        <h5 className="font-bold">ESTUDIOS</h5>
+    <div className="container bg-slate-300">
+      <div className="shadow-light-3 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
+        <h5 className="font-bold ">ESTUDIOS</h5>
       </div>
-      <div className="row">
+      <div className="row ">
         {data.map((estudio) => (
           <div className="col-md-4 mb-4" key={estudio._id}>
             <div className="card bg-amber-200 shadow-md max-w-xs transition duration-300 ease-in-out hover:scale-110">

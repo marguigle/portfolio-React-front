@@ -1,11 +1,11 @@
-.card {
+.cong {
   animation: fade-in linear;
-  animation-timeline: view(200px);
+  animation-timeline: view(330px);
 }
 @keyframes fade-in {
   from {
-    scale: 0.8;
-    opacity: 0;
+    scale: 0.6;
+    opacity: 0.1;
   }
   to {
     scale: 1.1;
