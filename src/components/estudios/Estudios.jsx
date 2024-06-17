@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "../../../src/services/apiService";
 import Cargando from "../Cargando";
+import "./estudios.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import.meta.env.VITE_URL_BASE;
 const url = import.meta.env.VITE_URL_BASE;

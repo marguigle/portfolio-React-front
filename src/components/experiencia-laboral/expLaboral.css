@@ -1,18 +1,31 @@
 .cont-exp {
-    display: flex;
-    margin-bottom: 2rem;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.fotoExpLab {
+  max-width: 70px;
+  margin: 0 1rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgb(208, 211, 245);
+  animation: fade-in linear;
+  animation-timeline: view(300px);
+}
+
+@keyframes fade-in {
+  from {
+    scale: 0.8;
+    opacity: 0;
   }
-  
-  .fotoExpLab {
-    max-width: 70px;
-    margin: 0 1rem;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px rgb(208, 211, 245);
+  to {
+    scale: 1;
+    opacity: 1;
   }
-  .cont-exp p {
-    margin-left: 2rem;
-    vertical-align: baseline;
-  
-    color: rgb(10, 9, 9);
-  }
-  
+}
+
+.cont-exp p {
+  margin-left: 2rem;
+  vertical-align: baseline;
+
+  color: rgb(10, 9, 9);
+}

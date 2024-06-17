@@ -26,7 +26,8 @@
     "tough-cookie": "^4.1.4",
     "tw-elements": "^2.0.0",
     "tw-elements-react": "^1.0.0-alpha2",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "uvcanvas": "^0.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
