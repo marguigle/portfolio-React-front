@@ -39,7 +39,7 @@ const Estudios = () => {
   }
 
   return (
-    <div className="container bg-slate-300">
+    <div className="container bg-yellow-50">
       <div className="shadow-light-3 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
         <h5 className="font-bold ">ESTUDIOS</h5>
       </div>
