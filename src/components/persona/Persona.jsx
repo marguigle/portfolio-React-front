@@ -14,7 +14,7 @@ const Persona = () => {
     const fetchDataFromApi = async () => {
       try {
         const persona = await fetchData(url + "/persona");
-        setData(persona.response); // Accede al array dentro de response
+        setData(persona.response);
       } catch (error) {
         setError(error.message);
       } finally {
