@@ -1,10 +1,10 @@
 const SoftSkills = () => {
   return (
-    <div className="container flex  bg-[url(https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/mountains-8347890_1920.jpg?alt=media&token=db4f74ab-861b-4368-8053-4a0860ef76a1)] bg-cover bg-center h-screen  from-stone-600 ">
+    <div className="container flex  bg-[url(https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/mountains-8347890_1920.jpg?alt=media&token=db4f74ab-861b-4368-8053-4a0860ef76a1)] bg-cover bg-center h-screen  from-stone-600  justify-center ">
       <div className="text-2xl  mb-5  tems-center justify-center ">
-        <h5 className="pt-24 mr-9 text-white">Soft skills</h5>
+        <h5 className="pt-24 m-2 text-white">Soft skills</h5>
       </div>
-      <ul className="w-56 text-white">
+      <ul className="w-56 text-white text-center m-4">
         <li className="w-full border-b-2 border-neutral-100 border-opacity-100 py-4 rk:border-opacity-50">
           trabajo en equipo
         </li>
