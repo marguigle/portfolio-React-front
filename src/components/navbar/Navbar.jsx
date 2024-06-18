@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav
       className="container relative flex w-full flex-wrap  items-center justify-between 
-     bg-slate-600 py-2 shadow-dark-strong dark:bg-neutral-700 lg:py-4 rounded"
+     bg-slate-600 py-2 shadow-dark-strong dark:bg-neutral-700 lg:py-4 "
     >
       <div className="relative flex items-end">
         <ul>
