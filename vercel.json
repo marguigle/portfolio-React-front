@@ -1,10 +1,19 @@
 
+  
 {
-    "rewrites": [
+    "routes": [
       {
-        "source": "/(.*)",
-        "destination": "/index.html"
+       "src": "/",
+        "dest": "/"
+      },
+      {
+        "src": "/medic",
+        "dest": "/"
+      },
+      {
+        "src": "/developer",
+        "dest": "/"
       }
-    ]
-  }
+      ]
+     } 
   
