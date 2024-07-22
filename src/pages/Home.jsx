@@ -6,7 +6,10 @@ const Home = () => {
           Bienvenido a mi Portfolio
         </h1>
         <div className="flex justify-center items-center mt-20  ">
-          <img src="" className="w-52 rounded-full" />
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/21438e29-719b-45df-ab9b-e61b8e6c3798?alt=media&token=4c5db8b7-7494-4040-88d7-748c1267bb39"
+            className="w-52 rounded-full"
+          />
         </div>
       </div>
     </>
