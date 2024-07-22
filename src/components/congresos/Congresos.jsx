@@ -27,7 +27,11 @@ const Congresos = () => {
   }, []);
 
   if (loading) {
-    return <Cargando />;
+    return (
+      <>
+        <h2>Cargando...</h2> <Cargando />
+      </>
+    );
   }
 
   if (error) {
