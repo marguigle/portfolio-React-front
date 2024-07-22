@@ -1,19 +1,12 @@
 
   
 {
-    "routes": [
+    "rewrites": [
       {
-       "src": "/",
-        "dest": "/"
-      },
-      {
-        "src": "/medic",
-        "dest": "/"
-      },
-      {
-        "src": "/developer",
-        "dest": "/"
+       "source": "/(.*)",
+        "destination": "/"
       }
+
       ]
      } 
   
