@@ -3,5 +3,5 @@ body {
   overflow-x: hidden;
 }
 * {
-  font-family: cursive;
+  font-family: cursive "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
