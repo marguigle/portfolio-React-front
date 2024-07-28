@@ -1,6 +1,6 @@
 .card {
   animation: fade-in linear;
-  animation-timeline: view(200px);
+  animation-timeline: view(1500px);
 }
 @keyframes fade-in {
   from {
