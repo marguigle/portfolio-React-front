@@ -40,9 +40,9 @@ const ExpLaboral = () => {
 
   return (
     <>
-      <div className="container shadow-lg p-1 mb-1 mr-2 ml-2 bg-body rounded">
+      <div className="container flex-col  shadow-lg p-1 mb-1  bg-body rounded">
         <div className="shadow-lg p-2 mb-4 bg-info rounded">
-          <h5 className="font-bold text-2xl text-center">
+          <h5 className="font-bold text-2xl text-center pt-1">
             EXPERIENCIA LABORAL
           </h5>
         </div>

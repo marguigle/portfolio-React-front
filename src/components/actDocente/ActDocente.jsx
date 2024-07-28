@@ -40,7 +40,7 @@ const ActDocente = () => {
   return (
     <div className="container  bg-[url(https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/Imagen%20abstracta-2.jpg?alt=media&token=39f82268-e17e-48a2-8c84-51acbf281824)]">
       <div className="shadow-lg-300 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
-        <h5 className="font-bold">ACTIVIDAD DOCENTE</h5>
+        <h5 className="font-bold  mt-2">ACTIVIDAD DOCENTE</h5>
       </div>
       <div className="row">
         {data.map((actDocente) => (
