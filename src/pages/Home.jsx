@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <>
-      <div className="relative bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/Imagen%20de%20paisaje-2.jpg?alt=media&token=c98d9ce4-81f5-4b56-850d-7b07e87a87e0')] bg-cover bg-center from-stone-600 text-white w-full h-full object-cover">
+      <div className=" container relative bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/Imagen%20de%20paisaje-2.jpg?alt=media&token=c98d9ce4-81f5-4b56-850d-7b07e87a87e0')] bg-cover bg-center from-stone-600 text-white w-screen h-full ">
         <h1 className="text-4xl text-center text-white pt-16 font-bold">
           Bienvenido a mi Pagina web
         </h1>
