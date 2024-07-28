@@ -40,7 +40,7 @@ const HardSkills = () => {
   }
 
   return (
-    <div className="container mx-auto p-4 bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/fir-tree-7716263_1920.jpg?alt=media&token=8cf290d1-3288-4a6d-a6fb-2718697e9e81')] bg-cover bg-center  from-stone-600 ">
+    <div className=" mx-auto p-4 bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/fir-tree-7716263_1920.jpg?alt=media&token=8cf290d1-3288-4a6d-a6fb-2718697e9e81')] bg-cover bg-center  from-stone-600 ">
       <h4 className="text-center m-6 text-2xl font-bold text-white">
         Hard Skills
       </h4>
