@@ -67,14 +67,14 @@ const Proyectos = () => {
   }
 
   return (
-    <div className="flex flex-col items-center shadow-lg p-4">
-      <div className="m-6 text-2xl font-bold">
-        <h5>Proyectos</h5>
+    <div className="flex flex-col items-center shadow-lg p-4 bg-slate-500">
+      <div className="m-6 text-3xl font-bold text-green-950 text-shadow">
+        <h5 className=" text-opacity-90">Proyectos</h5>
       </div>
 
       {data.map((proyecto, projectIndex) => (
         <div key={projectIndex}>
-          <p className="text-center">{proyecto.titulo}</p>
+          <p className="text-center font-extrabold mb-3">{proyecto.titulo}</p>
           <div className="flex ">
             <button
               onClick={() => prev(projectIndex, proyecto.imgs?.length || 0)}
@@ -105,7 +105,7 @@ const Proyectos = () => {
             </button>
           </div>
 
-          <p className="justify-center text-center w-auto mb-3">
+          <p className="justify-center text-center w-auto mb-6">
             {proyecto.tecnologias}
           </p>
         </div>
