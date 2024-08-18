@@ -11,8 +11,8 @@ const Home = () => {
             src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/21438e29-719b-45df-ab9b-e61b8e6c3798?alt=media&token=4c5db8b7-7494-4040-88d7-748c1267bb39"
             className="w-52 h-52 object-contain rounded-full m-4"
           />
-          <div className="relative w-full max-w-5xl">
-            <div className="absolute inset-0 bg-black opacity-40 rounded-md"></div>
+          <div className="relative w-full max-w-5xl p-4 bg-white bg-opacity-10 backdrop-blur-md rounded-sm">
+            <div className="absolute inset-0 bg-black opacity-40 rounded-md backdrop-blur-2xl"></div>
             <div className="relative text-white p-4">
               <div className="mt-4">
                 <p>
