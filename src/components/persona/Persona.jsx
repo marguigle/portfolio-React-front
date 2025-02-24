@@ -1,27 +1,15 @@
-import { useEffect, useState } from "react";
-import { fetchData } from "../../services/apiService";
-import "./persona.css";
-import.meta.env.VITE_URL_BASE;
-const url = import.meta.env.VITE_URL_BASE;
+import { useContext, useEffect } from "react";
 
-console.log(url);
+import "./persona.css";
+import { FetchContextPersona } from "../../contexts/fetchContextPersona";
+import.meta.env.VITE_URL_BASE;
+// const url = import.meta.env.VITE_URL_BASE;
+
 const Persona = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { fetchDataFromApi, loading, error, data } =
+    useContext(FetchContextPersona);
 
   useEffect(() => {
-    const fetchDataFromApi = async () => {
-      try {
-        const persona = await fetchData(url + "/persona");
-        setData(persona.response);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchDataFromApi();
   }, []);
 
