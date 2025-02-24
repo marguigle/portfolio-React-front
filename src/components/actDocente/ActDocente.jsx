@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchData } from "../../services/apiService";
 import Cargando from "../Cargando";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -58,4 +58,4 @@ const ActDocente = () => {
   );
 };
 
-export default ActDocente;
+export default React.memo(ActDocente);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchData } from "../../../src/services/apiService";
 import Cargando from "../Cargando";
 import "./congresos.css";
@@ -62,4 +62,4 @@ const Congresos = () => {
   );
 };
 
-export default Congresos;
+export default React.memo(Congresos);

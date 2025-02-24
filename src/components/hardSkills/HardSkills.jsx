@@ -1,5 +1,5 @@
 import { ProgressBar } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchData } from "../../../src/services/apiService";
 import Cargando from "../Cargando";
 import "./hardSkills.css";
@@ -66,4 +66,4 @@ const HardSkills = () => {
   );
 };
 
-export default HardSkills;
+export default React.memo(HardSkills);

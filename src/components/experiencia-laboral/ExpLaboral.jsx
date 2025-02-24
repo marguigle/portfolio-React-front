@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchData } from "../../services/apiService";
 import Cargando from "../Cargando";
 import "./expLaboral.css";
@@ -65,4 +65,4 @@ const ExpLaboral = () => {
   );
 };
 
-export default ExpLaboral;
+export default React.memo(ExpLaboral);

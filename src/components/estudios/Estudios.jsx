@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchData } from "../../../src/services/apiService";
 import Cargando from "../Cargando";
 import "./estudios.css";
@@ -61,4 +61,4 @@ const Estudios = () => {
   );
 };
 
-export default Estudios;
+export default React.memo(Estudios);
