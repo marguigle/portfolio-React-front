@@ -20,3 +20,11 @@
 .deco {
   list-style-type: none;
 }
+.acercade {
+  color: black;
+}
+@media screen and (min-width: 768px) {
+  .acercade {
+    color: #023743;
+  }
+}
