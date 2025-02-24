@@ -49,10 +49,10 @@ const Persona = () => {
 
           <div className="container container-datos">
             <div className="row justify-content-around">
-              <div className=" col-10">
+              <div>
                 <h4 className="text-2xl font-bold acercade">Acerca de mi:</h4>
 
-                <p className="acercade">{persona.acercaDe}</p>
+                <p className="acercade ">{persona.acercaDe}</p>
               </div>
             </div>
           </div>
