@@ -28,8 +28,6 @@ const Proyectos = () => {
     fetchDataFromApi();
   }, []);
 
-  console.log("tercer conslog", data);
-
   const prev = useCallback((projectIndex, imgsLength) => {
     setIndices((prevIndices) =>
       prevIndices.map((indice, index) =>
