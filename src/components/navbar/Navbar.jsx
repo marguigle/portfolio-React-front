@@ -21,7 +21,7 @@ const Navbar = () => {
       className="  flex min-w-screen flex-wrap  items-center justify-between 
      bg-slate-600 py-2 shadow-dark-strong dark:bg-neutral-700 lg:py-4 "
     >
-      <div className="relative flex items-end">
+      <div className="relative flex items-end  ">
         <ul>
           <button
             type="button"

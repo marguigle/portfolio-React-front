@@ -40,8 +40,8 @@ const Estudios = () => {
 
   return (
     <div className="container bg-[url(https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/Imagen%20abstracta-2.jpg?alt=media&token=39f82268-e17e-48a2-8c84-51acbf281824)]   ">
-      <div className="shadow-light-3 p-2 mt-5 mb-4 bg-info rounded text-xl  text-center">
-        <h5 className="font-bold ">ESTUDIOS</h5>
+      <div className=" bg-info rounded text-xl  text-center  m-1">
+        <h5 className="font-bold p-1 ">ESTUDIOS</h5>
       </div>
       <div className="row ">
         {data.map((estudio) => (
