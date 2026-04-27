@@ -1,6 +1,6 @@
 import { ProgressBar } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../../../src/services/apiService";
+import { fetchData } from "../../services/apiService";
 import Cargando from "../Cargando";
 import "./hardSkills.css";
 import.meta.env.VITE_URL_BASE;
@@ -32,35 +32,63 @@ const HardSkills = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="min-h-screen flex items-center justify-center"><div className="card-dark"><p className="text-red-400">Error: {error}</p></div></div>;
   }
 
   if (data.length === 0) {
-    return <div>No hay datos disponibles</div>;
+    return <div className="min-h-screen flex items-center justify-center"><div className="card-dark"><p className="text-gray-400">No hay datos disponibles</p></div></div>;
   }
 
   return (
-    <div className=" mx-auto p-4 bg-[url('https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/fir-tree-7716263_1920.jpg?alt=media&token=8cf290d1-3288-4a6d-a6fb-2718697e9e81')] bg-cover bg-center  from-stone-600 ">
-      <h4 className="text-center m-6 font-bold  text-4xl text-white text-shadow">
-        Hard Skills
-      </h4>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4  ">
-        {data.map((hardSkill) => {
-          return (
+    <div className="min-h-screen gradient-hero pt-20 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Hard <span className="gradient-text">Skills</span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Tecnologías y herramientas que domino para crear soluciones web modernas
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {data.map((hardSkill, index) => (
             <div
-              className="bg-warning-200 rounded-md p-4 flex flex-col items-center shadow-md habilidad"
               key={hardSkill._id}
+              className="card-glass p-6 group hover:scale-105 transition-transform duration-300"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <img className="w-12 h-12 mb-2" src={hardSkill.skill} alt="" />
-              <ProgressBar
-                now={hardSkill.porcentaje}
-                label={`${hardSkill.porcentaje}%`}
-                className="w-full mb-2"
-              />
-              <h6>{hardSkill.nivel}</h6>
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-xl bg-dark-700 group-hover:bg-brand-violet/20 transition-colors">
+                  <img
+                    className="w-12 h-12 object-contain"
+                    src={hardSkill.skill}
+                    alt=""
+                  />
+                </div>
+                <h6 className="text-white font-semibold text-lg mb-3">
+                  {hardSkill.nivel}
+                </h6>
+                <div className="w-full">
+                  <ProgressBar
+                    now={hardSkill.porcentaje}
+                    label={`${hardSkill.porcentaje}%`}
+                    className="h-2 bg-dark-600 rounded-full overflow-hidden"
+                    variant="custom"
+                    style={{
+                      background: '#1a1a25',
+                    }}
+                  />
+                  <style>{`
+                    .progress-bar {
+                      background: linear-gradient(90deg, #7c3aed, #10b981);
+                    }
+                  `}</style>
+                </div>
+              </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

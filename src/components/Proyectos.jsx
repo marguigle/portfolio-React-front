@@ -16,7 +16,7 @@ const Proyectos = () => {
         const respuesta = await fetchData(url + "/proyectos");
         console.log("primer conslog", respuesta);
         setData(respuesta.response);
-        setIndices(respuesta.response.map(() => 0)); // Inicializar los índices para cada proyecto
+        setIndices(respuesta.response.map(() => 0));
         console.log("segundo conslog", respuesta.response);
       } catch (error) {
         setError(error.message);
@@ -61,53 +61,72 @@ const Proyectos = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-20">
+        <div className="card-dark">
+          <p className="text-red-400">Error: {error}</p>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="flex flex-col items-center shadow-lg p-4 bg-slate-500">
-      <div className="m-6 text-3xl font-bold text-green-950 text-shadow">
-        <h5 className=" text-opacity-90">Proyectos</h5>
-      </div>
-
-      {data.map((proyecto, projectIndex) => (
-        <div key={projectIndex}>
-          <p className="text-center font-extrabold mb-3">{proyecto.titulo}</p>
-          <div className="flex ">
-            <button
-              onClick={() => prev(projectIndex, proyecto.imgs?.length || 0)}
-              className="mr-2"
-            >
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-gal%C3%B3n-izquierdo-24.png?alt=media&token=a878a7c8-b18e-4409-bfc8-8107303768b3"
-                alt="Previous"
-              />
-            </button>
-
-            <div className="max-w-xl flex justify-center mx-auto mb-5">
-              <img
-                src={proyecto.imgs ? proyecto.imgs[indices[projectIndex]] : ""}
-                alt="Project Screenshot"
-                className="border-2 shadow-md"
-              />{" "}
-            </div>
-
-            <button
-              onClick={() => next(projectIndex, proyecto.imgs?.length || 0)}
-              className="ml-2"
-            >
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-imagenes.appspot.com/o/proyectos%2Ficons8-chevron-right-24.png?alt=media&token=12d12a6a-0bf5-4ae6-98b7-8b44827e43fa"
-                alt="Next"
-              />
-            </button>
-          </div>
-
-          <p className="justify-center text-center w-auto mb-6">
-            {proyecto.tecnologias}
+    <div className="min-h-screen gradient-hero pt-20 pb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Mis <span className="gradient-text">Proyectos</span>
+          </h2>
+          <p className="text-gray-400 text-lg">
+            Algunos de los proyectos web que he desarrollado
           </p>
         </div>
-      ))}
+
+        <div className="space-y-16">
+          {data.map((proyecto, projectIndex) => (
+            <div key={projectIndex} className="card-glass p-8">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {proyecto.titulo}
+                </h3>
+                <div className="flex items-center justify-center gap-4">
+                  <button
+                    onClick={() => prev(projectIndex, proyecto.imgs?.length || 0)}
+                    className="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center hover:bg-brand-violet transition-colors"
+                  >
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+
+                  <div className="w-full max-w-lg h-64 overflow-hidden rounded-xl">
+                    <img
+                      src={proyecto.imgs ? proyecto.imgs[indices[projectIndex]] : ""}
+                      alt="Project Screenshot"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <button
+                    onClick={() => next(projectIndex, proyecto.imgs?.length || 0)}
+                    className="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center hover:bg-brand-violet transition-colors"
+                  >
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div className="text-center mt-6">
+                <p className="text-gray-300 text-lg">
+                  {proyecto.tecnologias}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
