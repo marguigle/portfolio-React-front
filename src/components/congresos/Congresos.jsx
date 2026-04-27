@@ -15,7 +15,8 @@ const Congresos = () => {
     const fetchDataFromApi = async () => {
       try {
         const response = await fetchData(url + "/congresos");
-        setData(response.response);
+        console.log("Congresos response:", response);
+        setData(Array.isArray(response.response) ? response.response : []);
       } catch (error) {
         setError(error.message);
       } finally {

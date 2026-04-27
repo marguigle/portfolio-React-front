@@ -14,10 +14,10 @@ const Proyectos = () => {
     const fetchDataFromApi = async () => {
       try {
         const respuesta = await fetchData(url + "/proyectos");
-        console.log("primer conslog", respuesta);
-        setData(respuesta.response);
-        setIndices(respuesta.response.map(() => 0));
-        console.log("segundo conslog", respuesta.response);
+        console.log("Proyectos response:", respuesta);
+        const proyectosArray = Array.isArray(respuesta.response) ? respuesta.response : [];
+        setData(proyectosArray);
+        setIndices(proyectosArray.map(() => 0));
       } catch (error) {
         setError(error.message);
       } finally {

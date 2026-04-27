@@ -15,7 +15,8 @@ const Estudios = () => {
     const fetchDataFromApi = async () => {
       try {
         const response = await fetchData(url + "/estudios");
-        setData(response.response);
+        console.log("Estudios response:", response);
+        setData(Array.isArray(response.response) ? response.response : []);
       } catch (error) {
         setError(error.message);
       } finally {

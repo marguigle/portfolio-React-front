@@ -15,8 +15,8 @@ const HardSkills = () => {
     const fetchDataFromApi = async () => {
       try {
         const respuesta = await fetchData(url + "/hardskills");
-        console.log("hardskill " + respuesta);
-        setData(respuesta.response);
+        console.log("hardskill response:", respuesta);
+        setData(Array.isArray(respuesta.response) ? respuesta.response : []);
       } catch (error) {
         setError(error.message);
       } finally {

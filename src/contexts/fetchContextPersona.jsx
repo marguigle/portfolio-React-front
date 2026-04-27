@@ -15,9 +15,12 @@ function FetchContextProviderWrapper({ children }) {
     setLoading(true);
     try {
       const persona = await fetchData(url + ruta);
-      setData(persona.response);
+      console.log("Persona response:", persona);
+      setData(Array.isArray(persona.response) ? persona.response : []);
     } catch (err) {
+      console.error("Error fetching persona:", err);
       setError(err.message);
+      setData([]);
     } finally {
       setLoading(false);
     }

@@ -14,7 +14,8 @@ const ActDocente = () => {
     const fetchDataFromApi = async () => {
       try {
         const response = await fetchData(url + "/actdocente");
-        setData(response.response);
+        console.log("ActDocente response:", response);
+        setData(Array.isArray(response.response) ? response.response : []);
       } catch (error) {
         setError(error.message);
       } finally {

@@ -14,8 +14,8 @@ const ExpLaboral = () => {
     const fetchDataFromApi = async () => {
       try {
         const response = await fetchData(url + "/explaboral");
-        console.log(response);
-        setData(response.response);
+        console.log("ExpLaboral response:", response);
+        setData(Array.isArray(response.response) ? response.response : []);
       } catch (error) {
         setError(error.message);
       } finally {
