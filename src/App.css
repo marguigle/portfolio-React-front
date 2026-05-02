@@ -1,12 +1,1 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background-color: rgb(212, 210, 210);
-  overflow-x: hidden;
-}
-* {
-  font-family: cursive "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+/* App.css removido - ahora usa index.css con soporte para modo claro/oscuro */
