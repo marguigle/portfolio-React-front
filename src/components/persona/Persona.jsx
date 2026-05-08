@@ -3,7 +3,8 @@ import "./persona.css";
 import { FetchContextPersona } from "../../contexts/fetchContextPersona";
 
 const Persona = () => {
-  const { fetchDataFromApi, loading, error, data } = useContext(FetchContextPersona);
+  const { fetchDataFromApi, loading, error, data } =
+    useContext(FetchContextPersona);
 
   useEffect(() => {
     fetchDataFromApi();
@@ -46,7 +47,8 @@ const Persona = () => {
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-shrink-0">
                   <img
-                    src={persona.imgUrl}
+                    // src={persona.imgUrl}
+                    src="https://res.cloudinary.com/dujyd1cei/image/upload/v1778268717/fotoMedico1_fzrgw2.jpg"
                     alt={persona.nombres}
                     className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-brand-violet glow-violet"
                   />

@@ -5,6 +5,14 @@ import { useTheme } from "../../contexts/ThemeContext";
 const Navbar = () => {
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
+  const getNavbarImage = () => {
+    const path = location.pathname;
+    if (path === "/developer") {
+      return "https://res.cloudinary.com/dujyd1cei/image/upload/v1778268694/foroDeveloper_z9e8iw.jpg";
+    }
+    return "https://res.cloudinary.com/dujyd1cei/image/upload/v1778268717/fotoMedico1_fzrgw2.jpg";
+  };
+  const navbarImage = getNavbarImage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const linkMenu = [
@@ -25,7 +33,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-violet to-brand-emerald flex items-center justify-center overflow-hidden">
               <img
-                src="https://res.cloudinary.com/dujyd1cei/image/upload/v1777325697/fotoMia2_bdgkrq.jpg"
+                 src={navbarImage}
                 alt="Logo"
                 className="w-10 h-10 rounded-full object-cover"
               />
