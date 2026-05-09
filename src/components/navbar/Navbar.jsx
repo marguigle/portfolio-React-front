@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "../../contexts/ThemeContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 const Navbar = () => {
   const location = useLocation();
@@ -25,6 +26,7 @@ const Navbar = () => {
   ];
 
   const { theme, toggleTheme } = useTheme();
+  const { isAuthenticated } = useAuth();
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
@@ -62,6 +64,21 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+
+          {/* Login / Dashboard - Desktop */}
+          <Link
+            to={isAuthenticated ? "/admin/dashboard" : "/login"}
+            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 text-white bg-brand-violet hover:bg-brand-violet/80"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isAuthenticated ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+              )}
+            </svg>
+            {isAuthenticated ? "Dashboard" : "Ingresar"}
+          </Link>
 
           {/* Iconos sociales y toggle - Desktop */}
           <div className="hidden md:flex items-center gap-3">
@@ -355,6 +372,22 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
+
+          {/* Login / Dashboard - Mobile */}
+          <Link
+            to={isAuthenticated ? "/admin/dashboard" : "/login"}
+            onClick={closeMobileMenu}
+            className="flex items-center gap-2 px-4 py-3 rounded-lg font-medium transition-all duration-300 text-white bg-brand-violet/80 hover:bg-brand-violet"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isAuthenticated ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+              )}
+            </svg>
+            {isAuthenticated ? "Dashboard" : "Iniciar Sesión"}
+          </Link>
 
           {/* Separador */}
           <div className="border-t border-gray-200 dark:border-dark-700 my-2"></div>

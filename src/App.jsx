@@ -15,15 +15,12 @@ import CongresosCrud from './pages/admin/CongresosCrud.jsx';
 import HardSkillsCrud from './pages/admin/HardSkillsCrud.jsx';
 import ProyectosCrud from './pages/admin/ProyectosCrud.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
+import { ThemeProvider } from "./contexts/ThemeContext";
 import { Tooltip, initTWE } from "tw-elements";
 
 function App() {
   useEffect(() => {
     initTWE({ Tooltip });
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark" || (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-      document.documentElement.classList.add("dark");
-    }
   }, []);
 
   const router = createBrowserRouter([
@@ -42,26 +39,31 @@ function App() {
     },
     {
       path: "/admin",
-      element: (
-        <ProtectedRoute>
-          <AdminLayout />
-        </ProtectedRoute>
-      ),
+      element: <ProtectedRoute />,
       children: [
-        { index: true, element: <Navigate to="dashboard" replace /> },
-        { path: "dashboard", element: <Dashboard /> },
-        { path: "persona", element: <PersonaCrud /> },
-        { path: "estudios", element: <EstudiosCrud /> },
-        { path: "explaboral", element: <ExpLaboralCrud /> },
-        { path: "actdocente", element: <ActDocenteCrud /> },
-        { path: "congresos", element: <CongresosCrud /> },
-        { path: "hardskills", element: <HardSkillsCrud /> },
-        { path: "proyectos", element: <ProyectosCrud /> },
+        {
+          element: <AdminLayout />,
+          children: [
+            { index: true, element: <Navigate to="dashboard" replace /> },
+            { path: "dashboard", element: <Dashboard /> },
+            { path: "persona", element: <PersonaCrud /> },
+            { path: "estudios", element: <EstudiosCrud /> },
+            { path: "explaboral", element: <ExpLaboralCrud /> },
+            { path: "actdocente", element: <ActDocenteCrud /> },
+            { path: "congresos", element: <CongresosCrud /> },
+            { path: "hardskills", element: <HardSkillsCrud /> },
+            { path: "proyectos", element: <ProyectosCrud /> },
+          ],
+        },
       ],
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
 export default App;
