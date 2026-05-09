@@ -10,8 +10,8 @@ function FetchContextProviderWrapper({ children }) {
   const [error, setError] = useState(null);
 
   let ruta = "/persona";
+  const url = import.meta.env.VITE_URL_BASE || "http://localhost:3001/api";
   const fetchDataFromApi = async () => {
-    const url = import.meta.env.VITE_URL_BASE;
     setLoading(true);
     try {
       const persona = await fetchData(url + ruta);

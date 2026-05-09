@@ -9,8 +9,11 @@ const Navbar = () => {
     const path = location.pathname;
     if (path === "/developer") {
       return "https://res.cloudinary.com/dujyd1cei/image/upload/v1778268694/foroDeveloper_z9e8iw.jpg";
+    } else if (path === "/medic") {
+      return "https://res.cloudinary.com/dujyd1cei/image/upload/v1778268717/fotoMedico1_fzrgw2.jpg";
+    } else {
+      return "https://res.cloudinary.com/dujyd1cei/image/upload/v1778290829/fotoMia3_biohgi.png";
     }
-    return "https://res.cloudinary.com/dujyd1cei/image/upload/v1778268717/fotoMedico1_fzrgw2.jpg";
   };
   const navbarImage = getNavbarImage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,7 +36,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-violet to-brand-emerald flex items-center justify-center overflow-hidden">
               <img
-                 src={navbarImage}
+                src={navbarImage}
                 alt="Logo"
                 className="w-10 h-10 rounded-full object-cover"
               />
@@ -76,7 +79,12 @@ const Navbar = () => {
                     : "opacity-0 scale-0 -rotate-45"
                 }`}
               >
-                <svg width="24" height="24" fill="currentColor" className="text-yellow-400">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  className="text-yellow-400"
+                >
                   <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
                 </svg>
               </span>
@@ -88,17 +96,78 @@ const Navbar = () => {
                     : "opacity-0 scale-0 rotate-45"
                 }`}
               >
-                <svg width="24" height="24" fill="currentColor" className="text-yellow-500">
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  className="text-yellow-500"
+                >
                   <circle cx="12" cy="12" r="5" />
                   <g>
-                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2" />
-                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" />
-                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" />
-                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" strokeWidth="2" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" />
+                    <line
+                      x1="12"
+                      y1="1"
+                      x2="12"
+                      y2="3"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="12"
+                      y1="21"
+                      x2="12"
+                      y2="23"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="4.22"
+                      y1="4.22"
+                      x2="5.64"
+                      y2="5.64"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="18.36"
+                      y1="18.36"
+                      x2="19.78"
+                      y2="19.78"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="1"
+                      y1="12"
+                      x2="3"
+                      y2="12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="21"
+                      y1="12"
+                      x2="23"
+                      y2="12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="4.22"
+                      y1="19.78"
+                      x2="5.64"
+                      y2="18.36"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="18.36"
+                      y1="5.64"
+                      x2="19.78"
+                      y2="4.22"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
                   </g>
                 </svg>
               </span>
@@ -150,7 +219,12 @@ const Navbar = () => {
                     : "opacity-0 scale-0"
                 }`}
               >
-                <svg width="20" height="20" fill="currentColor" className="text-yellow-400">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  className="text-yellow-400"
+                >
                   <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
                 </svg>
               </span>
@@ -161,15 +235,62 @@ const Navbar = () => {
                     : "opacity-0 scale-0"
                 }`}
               >
-                <svg width="20" height="20" fill="currentColor" className="text-yellow-500">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  className="text-yellow-500"
+                >
                   <circle cx="12" cy="12" r="5" />
                   <g>
-                    <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" strokeWidth="2" />
-                    <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" strokeWidth="2" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" strokeWidth="2" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" strokeWidth="2" />
-                    <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" strokeWidth="2" />
-                    <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" strokeWidth="2" />
+                    <line
+                      x1="12"
+                      y1="1"
+                      x2="12"
+                      y2="3"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="12"
+                      y1="21"
+                      x2="12"
+                      y2="23"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="4.22"
+                      y1="4.22"
+                      x2="5.64"
+                      y2="5.64"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="18.36"
+                      y1="18.36"
+                      x2="19.78"
+                      y2="19.78"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="1"
+                      y1="12"
+                      x2="3"
+                      y2="12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
+                    <line
+                      x1="21"
+                      y1="12"
+                      x2="23"
+                      y2="12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    />
                   </g>
                 </svg>
               </span>
@@ -191,9 +312,19 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
               >
                 {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 )}
               </svg>
             </button>
