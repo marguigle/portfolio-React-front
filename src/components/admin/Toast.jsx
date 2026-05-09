@@ -12,7 +12,7 @@ export default function Toast({ message, type = "success", onClose }) {
   };
 
   return (
-    <div className="fixed top-4 right-4 z-[70] animate-slide-down">
+    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[70] animate-fade-in">
       <div className={`flex items-center gap-3 px-4 py-3 rounded-lg border backdrop-blur-md ${styles[type]}`}>
         {type === "success" ? (
           <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

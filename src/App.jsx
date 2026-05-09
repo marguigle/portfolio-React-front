@@ -14,6 +14,7 @@ import ActDocenteCrud from './pages/admin/ActDocenteCrud.jsx';
 import CongresosCrud from './pages/admin/CongresosCrud.jsx';
 import HardSkillsCrud from './pages/admin/HardSkillsCrud.jsx';
 import ProyectosCrud from './pages/admin/ProyectosCrud.jsx';
+import CursosCrud from './pages/admin/CursosCrud.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { Tooltip, initTWE } from "tw-elements";
@@ -53,6 +54,7 @@ function App() {
             { path: "congresos", element: <CongresosCrud /> },
             { path: "hardskills", element: <HardSkillsCrud /> },
             { path: "proyectos", element: <ProyectosCrud /> },
+            { path: "cursos", element: <CursosCrud /> },
           ],
         },
       ],
