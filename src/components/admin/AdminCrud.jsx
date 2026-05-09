@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getData, postData, putData, deleteData } from "../../services/apiService";
 import { uploadImage } from "../../services/cloudinary.js";
+import Toast from "./Toast";
 
 export default function AdminCrud({ title, endpoint, fields, imageFields = [] }) {
   const [items, setItems] = useState([]);
@@ -11,6 +12,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
   const [formData, setFormData] = useState({});
   const [deleteConfirm, setDeleteConfirm] = useState(null);
   const [uploading, setUploading] = useState(false);
+  const [toast, setToast] = useState(null);
 
   useEffect(() => {
     loadItems();
@@ -38,10 +40,10 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
     try {
       const url = await uploadImage(file);
       handleInputChange(field, url);
-      alert("¡Imagen subida exitosamente!");
+      setToast({ message: "Imagen subida exitosamente", type: "success" });
     } catch (err) {
       console.error("Upload error:", err);
-      alert("Error al subir la imagen: " + err.message);
+      setToast({ message: "Error al subir la imagen: " + err.message, type: "error" });
     } finally {
       setUploading(false);
     }
@@ -70,13 +72,15 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
     try {
       if (editingId) {
         await putData(`${endpoint}/${editingId}`, formData);
+        setToast({ message: "Registro actualizado exitosamente", type: "success" });
       } else {
         await postData(endpoint, formData);
+        setToast({ message: "Registro creado exitosamente", type: "success" });
       }
       setShowModal(false);
       loadItems();
     } catch (err) {
-      alert(err.message || "Error al guardar");
+      setToast({ message: err.message || "Error al guardar", type: "error" });
     }
   };
 
@@ -84,9 +88,10 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
     try {
       await deleteData(`${endpoint}/${id}`);
       setDeleteConfirm(null);
+      setToast({ message: "Registro eliminado exitosamente", type: "success" });
       loadItems();
     } catch (err) {
-      alert(err.message || "Error al eliminar");
+      setToast({ message: err.message || "Error al eliminar", type: "error" });
     }
   };
 
@@ -301,6 +306,13 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
             </div>
           </div>
         </div>
+      )}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
       )}
     </div>
   );
