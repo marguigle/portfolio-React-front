@@ -58,7 +58,7 @@ const icons = {
   ),
 };
 
-export default function AdminSidebar({ isOpen, onClose }) {
+export default function AdminSidebar({ isOpen, onClose, onOpenChangePassword }) {
   const location = useLocation();
   const { user, logout } = useAuth();
   const { theme, toggleTheme } = useTheme();
@@ -75,12 +75,12 @@ export default function AdminSidebar({ isOpen, onClose }) {
       />
 
       <aside
-        className={`fixed top-0 left-0 z-50 h-full w-64 bg-gray-900 border-r border-gray-800 transform transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed top-0 left-0 z-50 h-full w-64 bg-dark-900 border-r border-dark-700 transform transition-transform duration-300 lg:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
-          <div className="p-6 border-b border-gray-800">
+          <div className="p-6 border-b border-dark-700">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-violet to-brand-emerald flex items-center justify-center">
                 <span className="text-white font-bold text-lg">
@@ -107,7 +107,7 @@ export default function AdminSidebar({ isOpen, onClose }) {
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg mb-1 transition-colors ${
                     isActive
                       ? "bg-brand-violet/20 text-brand-violet"
-                      : "text-gray-400 hover:text-white hover:bg-gray-800"
+                      : "text-gray-400 hover:text-white hover:bg-dark-800"
                   }`}
                 >
                   {icons[item.icon]}
@@ -117,10 +117,10 @@ export default function AdminSidebar({ isOpen, onClose }) {
             })}
           </nav>
 
-          <div className="p-4 border-t border-gray-800 space-y-2">
+          <div className="p-4 border-t border-dark-700 space-y-2">
             <button
               onClick={toggleTheme}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors"
+              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-dark-800 hover:bg-dark-700 text-gray-300 rounded-lg transition-colors"
             >
               {theme === "dark" ? (
                 <>
@@ -137,6 +137,16 @@ export default function AdminSidebar({ isOpen, onClose }) {
                   <span>Modo Oscuro</span>
                 </>
               )}
+            </button>
+
+            <button
+              onClick={onOpenChangePassword}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-dark-800 hover:bg-dark-700 text-gray-300 rounded-lg transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              </svg>
+              <span>Cambiar Contraseña</span>
             </button>
 
             <button

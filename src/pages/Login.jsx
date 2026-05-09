@@ -63,7 +63,7 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-violet focus:border-transparent"
+              className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-violet focus:border-transparent"
               placeholder="admin@portfolio.com"
             />
           </div>
@@ -78,7 +78,7 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-violet focus:border-transparent"
+              className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-violet focus:border-transparent"
               placeholder="••••••••"
             />
           </div>
@@ -89,7 +89,7 @@ export default function Login() {
               id="remember"
               checked={remember}
               onChange={(e) => setRemember(e.target.checked)}
-              className="w-4 h-4 rounded border-gray-600 bg-gray-800 text-brand-violet focus:ring-brand-violet"
+              className="w-4 h-4 rounded border-dark-600 bg-dark-700 text-brand-violet focus:ring-brand-violet"
             />
             <label htmlFor="remember" className="ml-2 text-sm text-gray-400">
               Recordarme por 7 días

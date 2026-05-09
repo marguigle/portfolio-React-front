@@ -128,7 +128,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
       <div className="card-dark overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
-            <thead className="bg-gray-800/50">
+            <thead className="bg-dark-800/50">
               <tr>
                 {fields.map((f) => (
                   <th key={f.name} className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
@@ -152,7 +152,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
                 </tr>
               ) : (
                 items.map((item) => (
-                  <tr key={item._id} className="hover:bg-gray-800/30">
+                  <tr key={item._id} className="hover:bg-dark-800/30">
                     {fields.map((f) => (
                       <td key={f.name} className="px-4 py-3 text-sm text-gray-300">
                         {item[f.name]?.length > 50 ? item[f.name].substring(0, 50) + "..." : item[f.name]}
@@ -196,7 +196,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
       {showModal && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
           <div className="card-dark w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <div className="p-6 border-b border-gray-700 flex items-center justify-between">
+            <div className="p-6 border-b border-dark-700 flex items-center justify-between">
               <h2 className="text-xl font-bold text-white">
                 {editingId ? "Editar" : "Nuevo"} {title}
               </h2>
@@ -216,7 +216,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
                       value={formData[field.name] || ""}
                       onChange={(e) => handleInputChange(field.name, e.target.value)}
                       rows={3}
-                      className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-violet"
+                      className="w-full px-4 py-2 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-violet"
                       required={field.required}
                     />
                   ) : (
@@ -224,7 +224,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
                       type={field.type || "text"}
                       value={formData[field.name] || ""}
                       onChange={(e) => handleInputChange(field.name, e.target.value)}
-                      className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-violet"
+                      className="w-full px-4 py-2 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-violet"
                       required={field.required}
                     />
                   )}
@@ -239,7 +239,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
                     value={formData[field.name] || ""}
                     onChange={(e) => handleInputChange(field.name, e.target.value)}
                     placeholder="URL de la imagen"
-                    className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-violet mb-2"
+                    className="w-full px-4 py-2 bg-dark-700 border border-dark-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-violet mb-2"
                   />
                   {formData[field.name] && (
                     <img src={formData[field.name]} alt="" className="w-24 h-24 object-cover rounded-lg mb-2" />
@@ -259,7 +259,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
                 <button
                   type="button"
                   onClick={() => setShowModal(false)}
-                  className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                  className="px-4 py-2 bg-dark-700 hover:bg-dark-600 text-gray-300 rounded-lg transition-colors"
                 >
                   Cancelar
                 </button>
@@ -288,7 +288,7 @@ export default function AdminCrud({ title, endpoint, fields, imageFields = [] })
             <div className="flex justify-center gap-3">
               <button
                 onClick={() => setDeleteConfirm(null)}
-                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-lg transition-colors"
+                className="px-4 py-2 bg-dark-700 hover:bg-dark-600 text-gray-300 rounded-lg transition-colors"
               >
                 Cancelar
               </button>

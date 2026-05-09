@@ -116,7 +116,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link
             to="/admin/persona"
-            className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+            className="flex items-center gap-3 p-4 bg-dark-800 hover:bg-dark-700 rounded-lg transition-colors"
           >
             <div className="p-2 bg-brand-violet/20 rounded-lg text-brand-violet">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export default function Dashboard() {
           <a
             href="/"
             target="_blank"
-            className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+            className="flex items-center gap-3 p-4 bg-dark-800 hover:bg-dark-700 rounded-lg transition-colors"
           >
             <div className="p-2 bg-brand-emerald/20 rounded-lg text-brand-emerald">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,7 +147,7 @@ export default function Dashboard() {
 
           <button
             onClick={() => window.location.reload()}
-            className="flex items-center gap-3 p-4 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors text-left"
+            className="flex items-center gap-3 p-4 bg-dark-800 hover:bg-dark-700 rounded-lg transition-colors text-left"
           >
             <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

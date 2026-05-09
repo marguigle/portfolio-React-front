@@ -69,6 +69,16 @@ export const deleteData = async (endpoint) => {
   return response.data;
 };
 
+export const changePassword = async (currentPassword, newPassword) => {
+  const response = await api.put("/auth/change-password", { currentPassword, newPassword });
+  return response.data;
+};
+
+export const changeEmail = async (email, password) => {
+  const response = await api.put("/auth/change-email", { email, password });
+  return response.data;
+};
+
 export const fetchData = async (url) => {
   const response = await api.get(url);
   return response.data;
