@@ -1,3 +1,4 @@
+import Persona from "../components/persona/Persona";
 import HardSkills from "../components/hardSkills/HardSkills";
 import SoftSkills from "../components/SoftSkills";
 import Proyectos from "../components/Proyectos";
@@ -6,6 +7,7 @@ import Cursos from "../components/cursos/Cursos";
 const WebDeveloper = () => {
   return (
     <>
+      <Persona rol="desarrollador" />
       <HardSkills />
       <SoftSkills />
       <Cursos />

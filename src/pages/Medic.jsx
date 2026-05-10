@@ -7,7 +7,7 @@ import Congresos from '../components/congresos/Congresos.jsx';
 const Medic = () => {
   return (
     <>
-      <Persona />
+      <Persona rol="medico" />
       <Estudios />
       <Congresos />
       <ActDocente />

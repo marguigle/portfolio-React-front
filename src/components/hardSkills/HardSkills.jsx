@@ -66,9 +66,12 @@ const HardSkills = () => {
                     alt=""
                   />
                 </div>
-                <h6 className="text-white font-semibold text-lg mb-3">
-                  {hardSkill.nivel}
+                <h6 className="text-white font-semibold text-lg">
+                  {hardSkill.tecnologia}
                 </h6>
+                <p className="text-gray-400 text-sm mb-3">
+                  {hardSkill.nivel}
+                </p>
                 <div className="w-full">
                   <ProgressBar
                     now={hardSkill.porcentaje}
